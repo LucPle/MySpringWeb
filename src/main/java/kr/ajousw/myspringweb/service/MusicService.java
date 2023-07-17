@@ -60,4 +60,12 @@ public class MusicService {
             return 0;
         }
     }
+
+    public void deleteFavorite(String id) {
+        try {
+            albumsRepo.deleteById(id);
+        } catch (Exception e) {
+            System.out.println("Exception occurred while deleting the favorite: " + e.toString());
+        }
+    }
 }

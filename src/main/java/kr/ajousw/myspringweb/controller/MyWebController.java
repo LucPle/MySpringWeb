@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -49,7 +50,18 @@ public class MyWebController {
         return service.saveFavorite(favorite);
     }
 
+    @DeleteMapping(value = "/likes/{id}")
+    public void deleteLikes(@PathVariable String id) {
+        service.deleteFavorite(id);
+    }
 }
+
+/*
+ * curl -X POST http://localhost:8098/likes -d '@postSong.json' -H
+ * "Content-Type:application/json"
+ * Invoke-WebRequest -Uri "http://localhost:8098/likes" -Method POST -InFile
+ * 'postSong.json' -ContentType "application/json"
+ */
 
 // @RestController
 // public class MyWebController {
