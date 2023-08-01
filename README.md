@@ -29,3 +29,19 @@
 2. Lombok을 이용하여 반복적인 코드 작성을 줄여 코드 다이어트 및 가독성 강화
 3. Hibernate를 이용하여 데이터베이스 스키마를 자동으로 생성 및 업데이트
 4. Docker를 이용하여 프로젝트를 쉽고 빠르게 배포
+
+## 버전 및 빌드 방법
+
+### Version
+* Java 17
+    * Also needs Hibernate and Lombok
+* MySQL 8.0.33
+* Spring Boot 3.1.1
+
+### How to build
+* Default port: 8098
+```shell
+docker build -t my-spring-app .
+docker run -p 8098:8098 my-spring-app
+
+```
